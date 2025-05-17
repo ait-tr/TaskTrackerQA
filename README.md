@@ -86,23 +86,23 @@ Copy
 Edit
 ./gradle positiveAuth -Dbrowser=chrome
 
-🧪 Test Coverage
-API tests: test/java/de/ait/taskTracker/api/tests/, use Rest Assured and extend base API TestBase.
+## 🧪 Test Coverage
+- **API tests**: test/java/de/ait/taskTracker/api/tests/, use Rest Assured and extend base API TestBase.
 
-UI tests: test/java/de/ait/taskTracker/gui/tests/, use Selenium WebDriver and Page Object Model.
+- **UI tests**: test/java/de/ait/taskTracker/gui/tests/, use Selenium WebDriver and Page Object Model.
 
-Database tests: use JDBC repositories and DB utilities.
+- **Database tests**: use JDBC repositories and DB utilities.
 
-➕ Adding New Entities or Tests
-Add API endpoints and DTOs in src/main/java/de/ait/taskTracker/api/.
+## ➕ Adding New Entities or Tests
+1. Add API endpoints and DTOs in src/main/java/de/ait/taskTracker/api/.
 
-Add UI page objects in gui/pages/ and tests in gui/tests/.
+2. Add UI page objects in gui/pages/ and tests in gui/tests/.
 
-Add DTOs in dto/ and DB logic in dataBase/.
+3. Add DTOs in dto/ and DB logic in dataBase/.
 
-Write tests in corresponding test/java/de/ait/taskTracker/{api|gui}/tests/.
+4. Write tests in corresponding test/java/de/ait/taskTracker/{api|gui}/tests/.
 
-Add test data in test/resources/data/.
+5. Add test data in test/resources/data/.
 
 Update TestNG suite XML files in test/resources/suites/.
 
