@@ -104,5 +104,5 @@ Edit
 
 5. Add test data in test/resources/data/.
 
-Update TestNG suite XML files in test/resources/suites/.
+6. Update TestNG suite XML files in test/resources/suites/.
 
