@@ -1,8 +1,10 @@
 # TaskTrackerQA
 
-**TaskTrackerQA** is a test automation project for the Task Tracker application. It includes **UI**, **API**, and **database** test coverage using Java, Selenium, Rest Assured, TestNG, and JDBC. The architecture follows the Page Object Model and supports modular testing through reusable repository components.
+**TaskTrackerQA** is a test automation project for the Task Tracker application. It covers UI, API, and database testing using Java, TestNG, Selenium WebDriver, Rest Assured, JDBC, and Gradle. The architecture follows the Page Object Model and supports modular and reusable components.
 
-## 🚀 Technologies Used
+---
+
+## 🚀 Technologies
 
 - Java 17+
 - Gradle
@@ -10,56 +12,96 @@
 - Selenium WebDriver (UI Testing)
 - Rest Assured (API Testing)
 - JDBC + HikariCP (Database Testing)
-- Logback (Logging)
+- Lombok
+- Logback
 - MySQL
-- Page Object Model (POM)
 
-## 📁 Project Structure
+---
 
-```
+## 📂 Project Structure
+
 src/
-├── main/java/qa/
-│   ├── config/           # DB configuration
-│   ├── model/            # AppUser, ConfirmCode POJOs
-│   ├── mapper/           # ResultSet → POJO mappers
-│   └── repository/       # SQL queries, repositories, exceptions
-├── test/java/qa/
-│   └── tests/
-│       ├── ui/           # UI tests with Selenium
-│       ├── api/          # API tests with Rest Assured
-│       └── db/           # Database tests via JDBC repositories
-build.gradle.kts
-```
+├── main/java/de/ait/taskTracker/
+│ ├── api/
+│ │ ├── endpoints/ # API request methods
+│ │ └── objects/ # Entities with Lombok
+│ ├── config/ # Logger, SoftAssert, PropertiesLoader
+│ ├── dataBase/ # DB connection and config variables
+│ ├── dto/ # DTO objects (fields)
+│ ├── gui/
+│ │ ├── core/ # BasePage and core UI classes
+│ │ └── pages/ # UI page methods
+│ └── utils/ # DataProvider, RetryAnalyzer, Listeners, PropertiesLoader
+├── test/java/de/ait/taskTracker/
+│ ├── api/
+│ │ ├── config/ # Base API test class
+│ │ └── tests/ # API tests
+│ ├── gui/
+│ │ ├── core/ # Base UI test class
+│ │ └── tests/ # UI tests
+├── test/resources/
+│ ├── suites/ # TestNG XML suite files
+│ ├── data/ # CSV files for DataProvider
+│ ├── data.properties # Configuration properties
+│ └── logback.xml # Logging configuration
+build.gradle
+
+---
 
 ## ⚙️ Setup Instructions
 
 1. Install **JDK 17+**
-2. Set up a **MySQL** instance with required tables and data
-3. Configure DB credentials in `DdConnectionProperty.java`:
-   ```java
-   DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS
-   ```
+2. Setup a **MySQL** database with the required schema
+3. Configure DB connection and properties in:
+   - `src/main/java/de/ait/taskTracker/config/PropertiesLoader.java`
+   - `src/main/java/de/ait/taskTracker/dataBase/`
+   - `test/resources/data.properties`
 
-## ▶️ Running Tests
+---
 
-To build and run all tests:
+## 📦 Build and Test Execution
 
-```bash
-./gradlew clean test
-```
+The project uses **Gradle** as a build tool.
 
-Test execution is handled via **TestNG**. Test classes use `@Test` and `@DataProvider` annotations for flexible parameterization.
+### Running Tests
 
-## 🧪 Test Coverage
+Running Tests
+Run all tests:
 
-- **UI Tests**: form input, validation, navigation, element visibility
-- **API Tests**: response codes, body content, error cases
-- **Database Tests**: repository logic, data persistence and retrieval
+bash
+Copy
+Edit
+./gradle clean test
+Run a specific suite (e.g., positiveAuth):
 
-## ➕ Adding a New Entity
+bash
+Copy
+Edit
+./gradle positiveAuth
+Run with a specific browser:
 
-1. Add a POJO under `model/`
-2. Define SQL queries in a new `*Sql.java` interface
-3. Create a `RowMapper` class for mapping DB rows
-4. Implement a new repository class extending `AbstractRepository`
-5. Write corresponding tests under `test/java/qa/`
+bash
+Copy
+Edit
+./gradle positiveAuth -Dbrowser=chrome
+
+🧪 Test Coverage
+API tests: test/java/de/ait/taskTracker/api/tests/, use Rest Assured and extend base API TestBase.
+
+UI tests: test/java/de/ait/taskTracker/gui/tests/, use Selenium WebDriver and Page Object Model.
+
+Database tests: use JDBC repositories and DB utilities.
+
+➕ Adding New Entities or Tests
+Add API endpoints and DTOs in src/main/java/de/ait/taskTracker/api/.
+
+Add UI page objects in gui/pages/ and tests in gui/tests/.
+
+Add DTOs in dto/ and DB logic in dataBase/.
+
+Write tests in corresponding test/java/de/ait/taskTracker/{api|gui}/tests/.
+
+Add test data in test/resources/data/.
+
+Update TestNG suite XML files in test/resources/suites/.
+
