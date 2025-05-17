@@ -47,7 +47,7 @@ test/resources/
 ├─ data.properties # Configuration properties
 └─ logback.xml # Logging configuration
 build.gradle
-
+```
 ---
 
 ## ⚙️ Setup Instructions
@@ -58,7 +58,6 @@ build.gradle
    - `src/main/java/de/ait/taskTracker/config/PropertiesLoader.java`
    - `src/main/java/de/ait/taskTracker/dataBase/`
    - `test/resources/data.properties`
-```
 ---
 
 ## 📦 Build and Test Execution
