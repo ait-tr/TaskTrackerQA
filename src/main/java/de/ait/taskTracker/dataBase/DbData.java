@@ -24,13 +24,3 @@ public class DbData {
 
     public static final String DELETE_USER = "DELETE FROM app_user WHERE email='%s';";
 }
-
-/*
-        username = task-tracker
-        password = AVNS_bZqDsI3nPiisOOBj5Z_
-
-        host = db-mysql-fra1-63055-do-user-13224949-0.b.db.ondigitalocean.com
-        port = 25060
-        database = init_task_tracker
-        sslmode = REQUIRED
-        */
