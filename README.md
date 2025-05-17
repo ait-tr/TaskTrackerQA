@@ -21,29 +21,31 @@
 ## 📂 Project Structure
 
 src/
-├── main/java/de/ait/taskTracker/
-│ ├── api/
-│ │ ├── endpoints/ # API request methods
-│ │ └── objects/ # Entities with Lombok
-│ ├── config/ # Logger, SoftAssert, PropertiesLoader
-│ ├── dataBase/ # DB connection and config variables
-│ ├── dto/ # DTO objects (fields)
-│ ├── gui/
-│ │ ├── core/ # BasePage and core UI classes
-│ │ └── pages/ # UI page methods
-│ └── utils/ # DataProvider, RetryAnalyzer, Listeners, PropertiesLoader
-├── test/java/de/ait/taskTracker/
-│ ├── api/
-│ │ ├── config/ # Base API test class
-│ │ └── tests/ # API tests
-│ ├── gui/
-│ │ ├── core/ # Base UI test class
-│ │ └── tests/ # UI tests
-├── test/resources/
-│ ├── suites/ # TestNG XML suite files
-│ ├── data/ # CSV files for DataProvider
-│ ├── data.properties # Configuration properties
-│ └── logback.xml # Logging configuration
+main/java/de/ait/taskTracker/
+├─ api/
+│ ├─ endpoints/ # API request methods
+│ └─ objects/ # Entities with Lombok
+├─ config/ # Logger, SoftAssert, PropertiesLoader
+├─ dataBase/ # DB connection and config variables
+├─ dto/ # DTO objects (fields)
+├─ gui/
+│ ├─ core/ # BasePage and core UI classes
+│ └─ pages/ # UI page methods
+└─ utils/ # DataProvider, RetryAnalyzer, Listeners, PropertiesLoader
+
+test/java/de/ait/taskTracker/
+├─ api/
+│ ├─ config/ # Base API test class
+│ └─ tests/ # API tests
+├─ gui/
+│ ├─ core/ # Base UI test class
+│ └─ tests/ # UI tests
+
+test/resources/
+├─ suites/ # TestNG XML suite files
+├─ data/ # CSV files for DataProvider
+├─ data.properties # Configuration properties
+└─ logback.xml # Logging configuration
 build.gradle
 
 ---
