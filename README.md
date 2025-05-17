@@ -19,7 +19,7 @@
 ---
 
 ## 📂 Project Structure
-
+```
 src/
 main/java/de/ait/taskTracker/
 ├─ api/
@@ -58,7 +58,7 @@ build.gradle
    - `src/main/java/de/ait/taskTracker/config/PropertiesLoader.java`
    - `src/main/java/de/ait/taskTracker/dataBase/`
    - `test/resources/data.properties`
-
+```
 ---
 
 ## 📦 Build and Test Execution
