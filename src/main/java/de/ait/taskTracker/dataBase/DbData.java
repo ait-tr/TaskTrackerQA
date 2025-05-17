@@ -2,11 +2,11 @@ package de.ait.taskTracker.dataBase;
 
 public class DbData {
 
-    public static final String dbUrl = "jdbc:mysql://db-mysql-fra1-63055-do-user-13224949-0.b.db.ondigitalocean.com:25060/init_task_tracker?ssl-mode=REQUIRED";
+    public static final String dbUrl = "jdbc:mysql://<dbHostName>:25060/init_task_tracker?ssl-mode=REQUIRED";
 
     public static final String username = "task-tracker";
 
-    public static final String password = "AVNS_bZqDsI3nPiisOOBj5Z_";
+    public static final String password = "<dBPassword>";
 
     //query if your Beekeeper collapses hyphens (-)
     public static final String GET_CONFIRM_CODE_TEMPLATE =
